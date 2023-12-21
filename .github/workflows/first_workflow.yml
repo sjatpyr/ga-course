@@ -30,4 +30,4 @@ jobs:
       - name: echo a string
         run: Write-Host "Hello World"
       - name: Error Step
-        run: doesnotexist
+        run: doesnotexists
