@@ -1,9 +1,9 @@
-name: Simple Action
+name: Simple
 on: [push]
 
 jobs: 
   simple-action:
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Simple JS Action
         id: greet
