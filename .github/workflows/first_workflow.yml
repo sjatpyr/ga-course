@@ -1,0 +1,33 @@
+name: First Workflow
+
+on: [push]
+
+jobs:
+  run-shell-command:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: echo a string
+        run: echo "Hello World"
+      - name: multiline script 
+        run: |
+           node -v 
+           npm -v
+      - name: python Command 
+        run: |
+          import platform 
+          print
+          (platform.processor())
+        shell: python
+  parallel-job-macos:
+    runs-on: macos-latest
+    steps:
+      - name: View SW Version
+        run: sw_vers
+  dependent-job:
+    runs-on: windows-latest
+    needs: ["run-shell-command"]
+    steps:
+      - name: echo a string
+        run: Write-Host "Hello World"
+      - name: Error Step
+        run: doesnotexist
