@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - main
+      - events_that_trigger_workflows
       - "feature/*" # matches feature/feature-branch-name, doesnt not match feature/feature/feature-branch-name
       - "feature/**" # matches feature/feature-branch-name, matches feature/feature/feature-branch-name
       - "!feature/featA"  # matches all branches except feature/featA
