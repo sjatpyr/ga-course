@@ -3,6 +3,19 @@ name: Repository Events
 # on: [push, pull_request, issues]
 on:
   push:
+    branches:
+      - main
+      - "feature/*" # matches feature/feature-branch-name, doesnt not match feature/feature/feature-branch-name
+      - "feature/**" # matches feature/feature-branch-name, matches feature/feature/feature-branch-name
+      - "!feature/featA"  # matches all branches except feature/featA
+    # branches-ignore: # cannot be used with branches
+    #   - develop
+    # tags:
+    #   - v1.* # matches v1.0, v1.1, v1.2, ...
+    #   - '!v1.1.1' # matches all tags except v1.1.1
+    # paths:
+    #   - "**.js" # matches all js files in the repository
+    #   - "!app.js" # matches all js files except app.js 
   pull_request:
     types: [opened, assigned, reopened, synchronize]
   issues:
